@@ -29,7 +29,7 @@ class News
     private $description;
 
     /**
-     * @ORM\Column(type="datetime")
+     * @ORM\Column(type="string")
      */
     private $dateNews;
 
@@ -62,12 +62,12 @@ class News
         return $this;
     }
 
-    public function getDateNews(): ?\DateTimeInterface
+    public function getDateNews(): string
     {
         return $this->dateNews;
     }
 
-    public function setDateNews(\DateTimeInterface $dateNews): self
+    public function setDateNews(string $dateNews): self
     {
         $this->dateNews = $dateNews;
 

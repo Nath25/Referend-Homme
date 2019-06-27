@@ -29,7 +29,7 @@ class Event
     private $description;
 
     /**
-     * @ORM\Column(type="datetime")
+     * @ORM\Column(type="string")
      */
     private $dateEvent;
 
@@ -67,12 +67,12 @@ class Event
         return $this;
     }
 
-    public function getDateEvent(): ?\DateTimeInterface
+    public function getDateEvent(): string
     {
         return $this->dateEvent;
     }
 
-    public function setDateEvent(\DateTimeInterface $dateEvent): self
+    public function setDateEvent(string $dateEvent): self
     {
         $this->dateEvent = $dateEvent;
 
