@@ -7,6 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ApiResource()
+ * @ApiFilter(SearchFilter::class, properties={"name": "exact", "email": "exact"})
  * @ORM\Entity(repositoryClass="App\Repository\UserRepository")
  */
 class User

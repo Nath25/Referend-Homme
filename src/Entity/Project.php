@@ -3,12 +3,23 @@
 namespace App\Entity;
 
 use ApiPlatform\Core\Annotation\ApiResource;
+use ApiPlatform\Core\Annotation\ApiFilter;
+use ApiPlatform\Core\Bridge\Doctrine\Orm\Filter\SearchFilter;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ApiResource()
+ * @ApiFilter(SearchFilter::class, properties={
+ *     "title": "partial",
+ *     "description": "partial",
+ *     "dateStart": "exact",
+ *     "dateEnd": "exact",
+ *     "budget": "exact",
+ *     "places": "partial",
+ *     "events": "partial"
+ *     })
  * @ORM\Entity(repositoryClass="App\Repository\ProjectRepository")
  */
 class Project
