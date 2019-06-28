@@ -14,6 +14,7 @@ class ReferendHommeFixtures extends Fixture
 {
     public function load(ObjectManager $manager)
     {
+// Utilisateurs
         $user = new User();
         $user   ->setName('Gregory PETIT')
                 ->setEmail('greg@president.universe')
@@ -58,10 +59,10 @@ class ReferendHommeFixtures extends Fixture
                 ->setStatus(1);
         $manager->persist($user3);
 
-// project 1
+// Project 1
         $project = new Project();
         $project    ->setTitle('Parc pour Enfants')
-                    ->setDescription('blabla')
+                    ->setDescription("")
                     ->setDateStart("2019-06-27")
                     ->setDateEnd("2019-12-31")
                     ->setBudget(25000)
@@ -103,6 +104,21 @@ class ReferendHommeFixtures extends Fixture
                     ->setProject($project);
         $manager->persist($event);
 
+        $vote = new Vote();
+        $vote       ->setName("Lieu 1 : Place du Centre")
+                    ->setProject($project);
+        $manager->persist($news);
+
+        $vote = new Vote();
+        $vote       ->setName("Lieu 2 : Square Greg")
+                    ->setProject($project);
+        $manager->persist($news);
+
+        $vote = new Vote();
+        $vote       ->setName("Lieu 3 : Marché Aribo")
+                    ->setProject($project);
+        $manager->persist($news);
+
 // Project2
         $project1 = new Project();
         $project1   ->setTitle('Piscine Olym-qui-pique')
@@ -114,7 +130,7 @@ class ReferendHommeFixtures extends Fixture
         $manager->persist($project1);
 
         $place = new Place();
-        $place      ->setAdress('Bd Brûlant')
+        $place      ->setAdress('Boulevard Brûlant')
                     ->setZipCode(40000)
                     ->setCity('EFFESCEAU')
                     ->setProject($project1);
@@ -148,7 +164,22 @@ class ReferendHommeFixtures extends Fixture
                     ->setProject($project1);
         $manager->persist($event);
 
-//Project3
+        $vote = new Vote();
+        $vote       ->setName("Lieu 1 : Boulevard Brûlant")
+                    ->setProject($project1);
+        $manager->persist($news);
+
+        $vote = new Vote();
+        $vote       ->setName("Lieu 2 : Avenue du Soleil")
+                    ->setProject($project1);
+        $manager->persist($news);
+
+        $vote = new Vote();
+        $vote       ->setName("Lieu 3 : Quartier Fondu")
+                    ->setProject($project1);
+        $manager->persist($news);
+
+// Project3
         $project2 = new Project();
         $project2   ->setTitle('Rénovation Mairie')
                     ->setDescription("peinture chez Casto, la main d'oeuvre citoyenne ...")
@@ -179,15 +210,31 @@ class ReferendHommeFixtures extends Fixture
                     ->setProject($project2);
         $manager->persist($event);
 
+        $vote = new Vote();
+        $vote       ->setName("Couleurs 1 : Bleu / Blanc / Rouge")
+                    ->setProject($project2);
+        $manager->persist($news);
+
+        $vote = new Vote();
+        $vote       ->setName("Couleurs 2 : Blanc / Noir / Gris")
+                    ->setProject($project2);
+        $manager->persist($news);
+
+        $vote = new Vote();
+        $vote       ->setName("Couleurs 3 : Vert / Orange / Rouge ")
+                    ->setProject($project2);
+        $manager->persist($news);
+
+// News de la Mairie
         $news = new News();
-        $news       ->setTitle("Feu d'Artifice")
-                    ->setDescription("Catherine se propose bénévolement de le 'tirer' ou pas (sans arrière pensée)")
+        $news       ->setTitle("Feu d'Artifice du 14 juillet")
+                    ->setDescription("Pour la fête nationale, profitez d'un feu d'artifice extraordinaire en famille ! Catherine se propose bénévolement de le 'tirer' ou pas (sans arrière pensée)")
                     ->setDateNews('2019/07/14');
         $manager->persist($news);
 
         $news = new News();
         $news       ->setTitle("Concert FSO")
-                    ->setDescription("Musique jusqu'au bout de la nuit avec en VIP : Maël (expert en Air'nerf)")
+                    ->setDescription("Venez nombreux pour profiter d'une soirée exceptionnelle avec le groupe Fullstack FSO. LeadDev Maël le Traître, maître dans l'art du AirNerf et PO Alban le Terrible ! Musique jusqu'au bout de la nuit")
                     ->setDateNews('2019/06/28');
         $manager->persist($news);
 
@@ -195,9 +242,14 @@ class ReferendHommeFixtures extends Fixture
         $news       ->setTitle("Voeux de Mr le maire")
                     ->setDescription("Bonnes Vacances")
                     ->setDateNews('2019/07/26');
-
         $manager->persist($news);
 
+        $news = new News();
+        $news       ->setTitle("Avancée de la rénovation de la mairie")
+                    ->setDescription("Apportez votre chaise et votre verre, buvons à l'amitié citoyenne entre effessiens, contemplons ensemble la Mairie avec ses nouvelles couleurs")
+                    ->setDateNews('2019-07-06');
+        $manager->persist($news);
+        
         $manager->flush();
     }
 }
