@@ -75,19 +75,19 @@ class ReferendHommeFixtures extends Fixture
                     ->setProject($project);
         $manager->persist($place);
 
-        $place = new Place();
-        $place      ->setAdress('Square Greg')
+        $place1 = new Place();
+        $place1     ->setAdress('Square Greg')
                     ->setZipCode(40000)
                     ->setCity('EFFESCEAU')
                     ->setProject($project);
-        $manager->persist($place);
+        $manager->persist($place1);
 
-        $place = new Place();
-        $place      ->setAdress('Marché Aribo')
+        $place2 = new Place();
+        $place2     ->setAdress('Marché Aribo')
                     ->setZipCode(40000)
                     ->setCity('EFFESCEAU')
                     ->setProject($project);
-        $manager->persist($place);
+        $manager->persist($place2);
 
         $event = new Event();
         $event      ->setName("Réunion Publique d'information")
@@ -120,19 +120,19 @@ class ReferendHommeFixtures extends Fixture
                     ->setProject($project1);
         $manager->persist($place);
 
-        $place = new Place();
-        $place      ->setAdress('Avenue du Soleil')
+        $place1 = new Place();
+        $place1     ->setAdress('Avenue du Soleil')
                     ->setZipCode(40000)
                     ->setCity('EFFESCEAU')
                     ->setProject($project1);
-        $manager->persist($place);
+        $manager->persist($place1);
 
-        $place = new Place();
-        $place      ->setAdress('Quartier Fondu')
+        $place2 = new Place();
+        $place2     ->setAdress('Quartier Fondu')
                     ->setZipCode(40000)
                     ->setCity('EFFESCEAU')
                     ->setProject($project1);
-        $manager->persist($place);
+        $manager->persist($place2);
 
         $event = new Event();
         $event      ->setName("Réunion Publique d'information")

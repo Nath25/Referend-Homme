@@ -71,10 +71,16 @@ class Project
      */
     private $imgProject;
 
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\Vote", mappedBy="projet", orphanRemoval=true)
+     */
+    private $votes;
+
     public function __construct()
     {
         $this->places = new ArrayCollection();
         $this->events = new ArrayCollection();
+        $this->votes = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -212,6 +218,37 @@ class Project
     public function setImgProject(string $imgProject): self
     {
         $this->imgProject = $imgProject;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Vote[]
+     */
+    public function getVotes(): Collection
+    {
+        return $this->votes;
+    }
+
+    public function addVote(Vote $vote): self
+    {
+        if (!$this->votes->contains($vote)) {
+            $this->votes[] = $vote;
+            $vote->setProjet($this);
+        }
+
+        return $this;
+    }
+
+    public function removeVote(Vote $vote): self
+    {
+        if ($this->votes->contains($vote)) {
+            $this->votes->removeElement($vote);
+            // set the owning side to null (unless already changed)
+            if ($vote->getProjet() === $this) {
+                $vote->setProjet(null);
+            }
+        }
 
         return $this;
     }
