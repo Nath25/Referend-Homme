@@ -62,7 +62,7 @@ class ReferendHommeFixtures extends Fixture
 // Project 1
         $project = new Project();
         $project    ->setTitle('Parc pour Enfants')
-                    ->setDescription("")
+                    ->setDescription("Nous savons qu'il est important d'éduquer nos enfants ailleurs que devant des écrans, c'est pourquoi la Mairie souhaite construire un nouveau Parc pour enfants avec des jeux pour tous les âges : balançoire, toboggan, tourniquet et autres portiques feront de vos enfants de futurs explorateurs, aventuriers et escaladeurs !! Nous avons plusieurs espaces susceptibles d'accueillir cette infrastructure d'environ 50 mètres par 200. Nous avons besoin de vous pour choisir le lieu idéal ! à vos marques, prêts, votez !!")
                     ->setDateStart("2019-06-27")
                     ->setDateEnd("2019-12-31")
                     ->setBudget(25000)
@@ -92,37 +92,37 @@ class ReferendHommeFixtures extends Fixture
 
         $event = new Event();
         $event      ->setName("Réunion Publique d'information")
-                    ->setDescription("Proposition des maquettes")
+                    ->setDescription("Proposition des maquettes, du budget prévisionnel, du planning des travaux, ...")
                     ->setDateEvent('2019/06/28')
                     ->setProject($project);
         $manager->persist($event);
 
         $event = new Event();
         $event      ->setName("Débat des Vieux Garçons")
-                    ->setDescription("")
+                    ->setDescription("Venez participer au débat du projet 'Parc pour enfants' animé par Maël Vincent.")
                     ->setDateEvent('2019/06/28')
                     ->setProject($project);
         $manager->persist($event);
 
         $vote = new Vote();
         $vote       ->setName("Lieu 1 : Place du Centre")
-                    ->setProject($project);
-        $manager->persist($news);
+                    ->setProjet($project);
+        $manager->persist($vote);
 
         $vote = new Vote();
         $vote       ->setName("Lieu 2 : Square Greg")
-                    ->setProject($project);
-        $manager->persist($news);
+                    ->setProjet($project);
+        $manager->persist($vote);
 
         $vote = new Vote();
         $vote       ->setName("Lieu 3 : Marché Aribo")
-                    ->setProject($project);
-        $manager->persist($news);
+                    ->setProjet($project);
+        $manager->persist($vote);
 
 // Project2
         $project1 = new Project();
         $project1   ->setTitle('Piscine Olym-qui-pique')
-                    ->setDescription('blabla glouglou')
+                    ->setDescription("Futurs champions, votre Mairie a hâte de commencer les travaux de la future Piscine Olym-qui-pique. Comme vous le savez déjà, le Département, la Région et la Mairie d'Effesceau souhaitent proposer leur candidature aux futurs Jeux Olympiques d'été. Votre participation est indispensable : la Mairie a besoin de votre avis pour poser la première pierre !")
                     ->setDateStart('2019/04/27')
                     ->setDateEnd('2019/07/15')
                     ->setBudget(5000000)
@@ -152,37 +152,38 @@ class ReferendHommeFixtures extends Fixture
 
         $event = new Event();
         $event      ->setName("Réunion Publique d'information")
-                    ->setDescription("Proposition des maquettes")
+                    ->setDescription("Venez nombreux pour participer à la réunion d'information ! Ici ou ailleurs, la piscine verra -t-elle le jour à côté de chez moi ?
+                        Découverte de la maquette et questions diverses. Quels peuvent être les implications au niveau du traffic inter-urbain ? Quid des nuisances sonores ? Avez-vous une allergie au chlore ? Quel budget ? ")
                     ->setDateEvent('2019/06/26')
                     ->setProject($project1);
         $manager->persist($event);
 
         $event = new Event();
-        $event      ->setName("Vote")
-                    ->setDescription("")
+        $event      ->setName("Présentation du budget prévisionnel")
+                    ->setDescription("Point sur les financemenents publics, les sponsors et le mécénat")
                     ->setDateEvent('2019/07/01')
                     ->setProject($project1);
         $manager->persist($event);
 
         $vote = new Vote();
         $vote       ->setName("Lieu 1 : Boulevard Brûlant")
-                    ->setProject($project1);
-        $manager->persist($news);
+                    ->setProjet($project1);
+        $manager->persist($vote);
 
         $vote = new Vote();
         $vote       ->setName("Lieu 2 : Avenue du Soleil")
-                    ->setProject($project1);
-        $manager->persist($news);
+                    ->setProjet($project1);
+        $manager->persist($vote);
 
         $vote = new Vote();
         $vote       ->setName("Lieu 3 : Quartier Fondu")
-                    ->setProject($project1);
-        $manager->persist($news);
+                    ->setProjet($project1);
+        $manager->persist($vote);
 
 // Project3
         $project2 = new Project();
-        $project2   ->setTitle('Rénovation Mairie')
-                    ->setDescription("peinture chez Casto, la main d'oeuvre citoyenne ...")
+        $project2   ->setTitle('Ravalement de Façade')
+                    ->setDescription("La peinture chez Casto et la main d'oeuvre citoyenne... La Mairie d'Effesceau a besoin de vous pour son ravalement de façade décennal. Il s'agit de repeindre intégralement la Mairie et nous comptons sur vous ! A vos pinceaux !")
                     ->setDateStart('2019/06/27')
                     ->setDateEnd('2019/06/31')
                     ->setBudget(500)
@@ -198,32 +199,25 @@ class ReferendHommeFixtures extends Fixture
 
         $event = new Event();
         $event      ->setName("Réunion Publique d'information")
-                    ->setDescription("Proposition des couleurs")
-                    ->setDateEvent('2019/06/26')
-                    ->setProject($project2);
-        $manager->persist($event);
-
-        $event = new Event();
-        $event      ->setName("Vote")
-                    ->setDescription("")
+                    ->setDescription("Proposition des différents types de peinture, de textures et de palettes de couleurs")
                     ->setDateEvent('2019/06/26')
                     ->setProject($project2);
         $manager->persist($event);
 
         $vote = new Vote();
         $vote       ->setName("Couleurs 1 : Bleu / Blanc / Rouge")
-                    ->setProject($project2);
-        $manager->persist($news);
+                    ->setProjet($project2);
+        $manager->persist($vote);
 
         $vote = new Vote();
         $vote       ->setName("Couleurs 2 : Blanc / Noir / Gris")
-                    ->setProject($project2);
-        $manager->persist($news);
+                    ->setProjet($project2);
+        $manager->persist($vote);
 
         $vote = new Vote();
         $vote       ->setName("Couleurs 3 : Vert / Orange / Rouge ")
-                    ->setProject($project2);
-        $manager->persist($news);
+                    ->setProjet($project2);
+        $manager->persist($vote);
 
 // News de la Mairie
         $news = new News();
@@ -234,13 +228,13 @@ class ReferendHommeFixtures extends Fixture
 
         $news = new News();
         $news       ->setTitle("Concert FSO")
-                    ->setDescription("Venez nombreux pour profiter d'une soirée exceptionnelle avec le groupe Fullstack FSO. LeadDev Maël le Traître, maître dans l'art du AirNerf et PO Alban le Terrible ! Musique jusqu'au bout de la nuit")
+                    ->setDescription("Venez nombreux pour profiter d'une soirée exceptionnelle avec le groupe Fullstack FSO. LeadDev Maël-le-Traître, maître dans l'art du AirNerf et PO Alban-le-Terrible ! Musique jusqu'au bout de la nuit !")
                     ->setDateNews('2019/06/28');
         $manager->persist($news);
 
         $news = new News();
         $news       ->setTitle("Voeux de Mr le maire")
-                    ->setDescription("Bonnes Vacances")
+                    ->setDescription("Ce sera l'occasion pour Monsieur le Maire de vous souhaiter de Bonnes Vacances. Venez avec joie et bonne humeur.")
                     ->setDateNews('2019/07/26');
         $manager->persist($news);
 
