@@ -7,6 +7,7 @@ use App\Entity\User;
 use App\Entity\Event;
 use App\Entity\Place;
 use App\Entity\News;
+use App\Entity\Vote;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\Persistence\ObjectManager;
 
@@ -63,8 +64,8 @@ class ReferendHommeFixtures extends Fixture
         $project = new Project();
         $project    ->setTitle('Parc pour Enfants')
                     ->setDescription("Nous savons qu'il est important d'éduquer nos enfants ailleurs que devant des écrans, c'est pourquoi la Mairie souhaite construire un nouveau Parc pour enfants avec des jeux pour tous les âges : balançoire, toboggan, tourniquet et autres portiques feront de vos enfants de futurs explorateurs, aventuriers et escaladeurs !! Nous avons plusieurs espaces susceptibles d'accueillir cette infrastructure d'environ 50 mètres par 200. Nous avons besoin de vous pour choisir le lieu idéal ! à vos marques, prêts, votez !!")
-                    ->setDateStart("2019-06-27")
-                    ->setDateEnd("2019-12-31")
+                    ->setDateStart("27/06/2019")
+                    ->setDateEnd("31/12/2019")
                     ->setBudget(25000)
                     ->setImgProject("https://image.noelshack.com/fichiers/2019/26/5/1561683943-image-1.png");
         $manager->persist($project);
@@ -93,14 +94,14 @@ class ReferendHommeFixtures extends Fixture
         $event = new Event();
         $event      ->setName("Réunion Publique d'information")
                     ->setDescription("Proposition des maquettes, du budget prévisionnel, du planning des travaux, ...")
-                    ->setDateEvent('2019/06/28')
+                    ->setDateEvent('28/06/2019 16h00')
                     ->setProject($project);
         $manager->persist($event);
 
         $event = new Event();
         $event      ->setName("Débat des Vieux Garçons")
                     ->setDescription("Venez participer au débat du projet 'Parc pour enfants' animé par Maël Vincent.")
-                    ->setDateEvent('2019/06/28')
+                    ->setDateEvent('28/06/2019 18h00')
                     ->setProject($project);
         $manager->persist($event);
 
@@ -123,8 +124,8 @@ class ReferendHommeFixtures extends Fixture
         $project1 = new Project();
         $project1   ->setTitle('Piscine Olym-qui-pique')
                     ->setDescription("Futurs champions, votre Mairie a hâte de commencer les travaux de la future Piscine Olym-qui-pique. Comme vous le savez déjà, le Département, la Région et la Mairie d'Effesceau souhaitent proposer leur candidature aux futurs Jeux Olympiques d'été. Votre participation est indispensable : la Mairie a besoin de votre avis pour poser la première pierre !")
-                    ->setDateStart('2019/04/27')
-                    ->setDateEnd('2019/07/15')
+                    ->setDateStart('27/04/2019')
+                    ->setDateEnd('15/07/2019')
                     ->setBudget(5000000)
                     ->setImgProject('https://image.noelshack.com/fichiers/2019/26/5/1561683941-image.png');              
         $manager->persist($project1);
@@ -154,14 +155,14 @@ class ReferendHommeFixtures extends Fixture
         $event      ->setName("Réunion Publique d'information")
                     ->setDescription("Venez nombreux pour participer à la réunion d'information ! Ici ou ailleurs, la piscine verra -t-elle le jour à côté de chez moi ?
                         Découverte de la maquette et questions diverses. Quels peuvent être les implications au niveau du traffic inter-urbain ? Quid des nuisances sonores ? Avez-vous une allergie au chlore ? Quel budget ? ")
-                    ->setDateEvent('2019/06/26')
+                    ->setDateEvent('26/06/2019')
                     ->setProject($project1);
         $manager->persist($event);
 
         $event = new Event();
         $event      ->setName("Présentation du budget prévisionnel")
                     ->setDescription("Point sur les financemenents publics, les sponsors et le mécénat")
-                    ->setDateEvent('2019/07/01')
+                    ->setDateEvent('01/07/2019')
                     ->setProject($project1);
         $manager->persist($event);
 
@@ -184,8 +185,8 @@ class ReferendHommeFixtures extends Fixture
         $project2 = new Project();
         $project2   ->setTitle('Ravalement de Façade')
                     ->setDescription("La peinture chez Casto et la main d'oeuvre citoyenne... La Mairie d'Effesceau a besoin de vous pour son ravalement de façade décennal. Il s'agit de repeindre intégralement la Mairie et nous comptons sur vous ! A vos pinceaux !")
-                    ->setDateStart('2019/06/27')
-                    ->setDateEnd('2019/06/31')
+                    ->setDateStart('27/06/2019')
+                    ->setDateEnd('31/06/2019')
                     ->setBudget(500)
                     ->setImgProject('https://image.noelshack.com/fichiers/2019/26/5/1561683945-image-2.png');
         $manager->persist($project2);
@@ -200,7 +201,7 @@ class ReferendHommeFixtures extends Fixture
         $event = new Event();
         $event      ->setName("Réunion Publique d'information")
                     ->setDescription("Proposition des différents types de peinture, de textures et de palettes de couleurs")
-                    ->setDateEvent('2019/06/26')
+                    ->setDateEvent('26/06/2019')
                     ->setProject($project2);
         $manager->persist($event);
 
@@ -223,25 +224,25 @@ class ReferendHommeFixtures extends Fixture
         $news = new News();
         $news       ->setTitle("Feu d'Artifice du 14 juillet")
                     ->setDescription("Pour la fête nationale, profitez d'un feu d'artifice extraordinaire en famille ! Catherine se propose bénévolement de le 'tirer' ou pas (sans arrière pensée)")
-                    ->setDateNews('2019/07/14');
+                    ->setDateNews('14/07/2019 23h00');
         $manager->persist($news);
 
         $news = new News();
         $news       ->setTitle("Concert FSO")
                     ->setDescription("Venez nombreux pour profiter d'une soirée exceptionnelle avec le groupe Fullstack FSO. LeadDev Maël-le-Traître, maître dans l'art du AirNerf et PO Alban-le-Terrible ! Musique jusqu'au bout de la nuit !")
-                    ->setDateNews('2019/06/28');
+                    ->setDateNews('28/06/2019 20h00');
         $manager->persist($news);
 
         $news = new News();
         $news       ->setTitle("Voeux de Mr le maire")
                     ->setDescription("Ce sera l'occasion pour Monsieur le Maire de vous souhaiter de Bonnes Vacances. Venez avec joie et bonne humeur.")
-                    ->setDateNews('2019/07/26');
+                    ->setDateNews('26/07/2019');
         $manager->persist($news);
 
         $news = new News();
         $news       ->setTitle("Avancée de la rénovation de la mairie")
-                    ->setDescription("Apportez votre chaise et votre verre, buvons à l'amitié citoyenne entre effessiens, contemplons ensemble la Mairie avec ses nouvelles couleurs")
-                    ->setDateNews('2019-07-06');
+                    ->setDescription("Apportez votre chaise et votre verre, buvons à l'amitié citoyenne entre effessiens et contemplons ensemble la Mairie avec ses nouvelles couleurs")
+                    ->setDateNews('06/07/2019');
         $manager->persist($news);
         
         $manager->flush();
