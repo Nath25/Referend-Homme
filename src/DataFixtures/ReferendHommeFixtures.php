@@ -64,8 +64,8 @@ class ReferendHommeFixtures extends Fixture
                     ->setDescription('blabla')
                     ->setDateStart("2019-06-27")
                     ->setDateEnd("2019-12-31")
-                    ->setBudget(25000);
-
+                    ->setBudget(25000)
+                    ->setImgProject("https://image.noelshack.com/fichiers/2019/26/5/1561683943-image-1.png");
         $manager->persist($project);
 
         $place = new Place();
@@ -109,7 +109,8 @@ class ReferendHommeFixtures extends Fixture
                     ->setDescription('blabla glouglou')
                     ->setDateStart('2019/04/27')
                     ->setDateEnd('2019/07/15')
-                    ->setBudget(5000000);              
+                    ->setBudget(5000000)
+                    ->setImgProject('https://image.noelshack.com/fichiers/2019/26/5/1561683941-image.png');              
         $manager->persist($project1);
 
         $place = new Place();
@@ -153,7 +154,8 @@ class ReferendHommeFixtures extends Fixture
                     ->setDescription("peinture chez Casto, la main d'oeuvre citoyenne ...")
                     ->setDateStart('2019/06/27')
                     ->setDateEnd('2019/06/31')
-                    ->setBudget(500);
+                    ->setBudget(500)
+                    ->setImgProject('https://image.noelshack.com/fichiers/2019/26/5/1561683945-image-2.png');
         $manager->persist($project2);
 
         $place = new Place();

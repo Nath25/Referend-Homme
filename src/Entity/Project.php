@@ -66,6 +66,11 @@ class Project
      */
     private $events;
 
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $imgProject;
+
     public function __construct()
     {
         $this->places = new ArrayCollection();
@@ -195,6 +200,18 @@ class Project
                 $event->setProjectId(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getImgProject(): ?string
+    {
+        return $this->imgProject;
+    }
+
+    public function setImgProject(string $imgProject): self
+    {
+        $this->imgProject = $imgProject;
 
         return $this;
     }
